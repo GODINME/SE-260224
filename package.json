@@ -1,0 +1,16 @@
+{
+  "name": "SE-260224",
+  "version": "1.0.0",
+  "description": "TexkLab STEP on Experiment with Advanced client side javascript",
+  "main": "index.js",
+  "repository": "git@github.com:GODINME/SE-260224.git",
+  "author": "PAUL OFFEI <poffei@st.ug.edu.gh>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
+  }
+}
