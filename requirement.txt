@@ -1,0 +1,13 @@
+# Tools
+npm install -g yarn
+npm install -g typescript
+npm install lite-server -g #(optional) if you have live server plugin in vscode
+
+# local installation - yarn vs global installation npm
+yarn init
+# Project depedencies vs Developer dependencies
+## Project Dependencies
+yarn add bootstrap
+yarn add @popperjs/core
+yarn add jquery
+yarn add @fortawesome/fontawesome-free
