@@ -29,8 +29,14 @@
     function Start() {
         console.log("App Started...");
 
-        LoadData("GET", "./Data/contact.json", function(XHR){
-            console.log(XHR);
+        // One way of doing it
+        // LoadData("GET", "./Data/contact.json", function(displayData){
+        //     console.log(displayData);
+        // });
+
+        // Another way of doing it
+        $.getJSON("./Data/contact.json", function(dataSource){
+            console.log(dataSource.contactList)
         });
     }
 
