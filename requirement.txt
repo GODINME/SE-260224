@@ -11,3 +11,11 @@ yarn add bootstrap
 yarn add @popperjs/core
 yarn add jquery
 yarn add @fortawesome/fontawesome-free
+
+# Changing to TS file
+add tsconfig.json  file
+change the js file to ts
+do configure the tsconfigure file with compilerOpotions, target, module, sourceMap
+
+We need Dev dependencies
+yarn add @types/juery --dev
