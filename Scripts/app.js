@@ -1,6 +1,14 @@
 (function(){
 
-    function XHRRequest(method, url) {
+    /**
+     * This function loads data asynchronously from the URL. The callback function get called
+     * once the data is ready
+     *
+     * @param {string} method
+     * @param {string} url
+     * @param {function} callback
+     */
+    function LoadData(method, url, callback) {
         // step 1. Create an empty XHR object
         let XHR = new XMLHttpRequest();
 
@@ -13,8 +21,7 @@
         // step 4. Setup an event listener
         XHR.addEventListener("readystatechange", function(){
             if (XHR.status == 200 && XHR.readyState == 4){
-                let contactData = JSON.parse(XHR.responseText);
-                console.log(contactData.contactList[0]);
+                callback(XHR.responseText);
             }
         });
     }
@@ -22,7 +29,9 @@
     function Start() {
         console.log("App Started...");
 
-        XHRRequest("GET", "./Data/contact.json");
+        LoadData("GET", "./Data/contact.json", function(XHR){
+            console.log(XHR);
+        });
     }
 
     window.addEventListener("load", Start);
