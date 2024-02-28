@@ -13,7 +13,8 @@
         // step 4. Setup an event listener
         XHR.addEventListener("readystatechange", function(){
             if (XHR.status == 200 && XHR.readyState == 4){
-                console.log(XHR.responseText);
+                let contactData = JSON.parse(XHR.responseText);
+                console.log(contactData.contactList[0]);
             }
         });
     }
