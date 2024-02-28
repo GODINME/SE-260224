@@ -1,0 +1,12 @@
+{
+    "contactList": [
+        {"fullName": "PAUL OFFEI", "contactNumbere": "0201094364", "emailAddress": "poffei@gmail.com"},
+        {"fullName": "Kojo Appiah", "contactNumbere": "0291094364", "emailAddress": "kappiah@gmail.com"},
+        {"fullName": "Esi Osei", "contactNumbere": "0271094364", "emailAddress": "eosei@gmail.com"},
+        {"fullName": "Ama Adjie", "contactNumbere": "0591094364", "emailAddress": "aadjie@gmail.com"},
+        {"fullName": "Araba Mensah", "contactNumbere": "0281094364", "emailAddress": "amensah@gmail.com"},
+        {"fullName": "Kofi Asare", "contactNumbere": "0211094364", "emailAddress": "kasare@gmail.com"},
+        {"fullName": "Adwoa Dankor", "contactNumbere": "0571094364", "emailAddress": "adonkor@gmail.com"},
+        {"fullName": "Sophia Egyir", "contactNumbere": "0501094364", "emailAddress": "segyir@gmail.com"}
+    ]
+}
