@@ -21,15 +21,13 @@
             }
         });
     }
+    let contactList;
     function Start() {
         console.log("App Started...");
-        // One way of doing it
-        // LoadData("GET", "./Data/contact.json", function(displayData){
-        //     console.log(displayData);
-        // });
-        // Another way of doing it
         $.getJSON("./Data/contact.json", function (dataSource) {
-            console.log(dataSource.contactList);
+            contactList = dataSource.contactList;
+            let contact = new Contact();
+            console.log(contact.toString());
         });
     }
     window.addEventListener("load", Start);
