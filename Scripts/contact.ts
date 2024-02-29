@@ -45,6 +45,20 @@ class Contact {
         return output;
     }
 
+
+    // serialization or encoding the data
+    public toJSON(): string {
+        return `${this.FullName},${this.ContactNumber},${this.EmailAddress}`
+    }
+
+    // deserializing or decoding the data
+    public fromJSON(data: string): void {
+        let arrayData: string[] = data.split(",");
+        this.FullName = arrayData[0];
+        this.ContactNumber = arrayData[1];
+        this.EmailAddress = arrayData[2];
+    }
+
     // Private Member
     
 }

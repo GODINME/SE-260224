@@ -34,9 +34,19 @@
         $.getJSON("./Data/contact.json", function(dataSource){
             contactList = dataSource.contactList;
 
+            // loading data to local storage
+            let counter = 0
             for (const contact of contactList) {
                 let newContact = new Contact(contact.fullName, contact.contactNumber, contact.emailAddress);
+               localStorage.setItem(counter.toString(), newContact.toJSON());
+               counter++;
+            }
 
+            // Retrieving data from local storage
+            let keys = Object.keys(localStorage);
+            for (const key of keys) {
+                let newContact = new Contact();
+                newContact.fromJSON(localStorage.getItem(key));
                 console.log(newContact.toString());
             }
         });
