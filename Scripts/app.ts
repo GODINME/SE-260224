@@ -34,8 +34,11 @@
         $.getJSON("./Data/contact.json", function(dataSource){
             contactList = dataSource.contactList;
 
-            let contact = new Contact();
-            console.log(contact.toString());
+            for (const contact of contactList) {
+                let newContact = new Contact(contact.fullName, contact.contactNumber, contact.emailAddress);
+
+                console.log(newContact.toString());
+            }
         });
     }
 
