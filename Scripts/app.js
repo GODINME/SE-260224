@@ -21,25 +21,53 @@
             }
         });
     }
-    let contactList;
+    /**
+     * This function write or save all contacts to the local storage
+     *
+     * @param {any[]} contactList
+     */
+    function SaveContactListDataToLocalStorage(contactList) {
+        // loading data to local storage
+        let counter = 0;
+        for (const contact of contactList) {
+            let newContact = new Contact(contact.fullName, contact.contactNumber, contact.emailAddress);
+            localStorage.setItem(counter.toString(), newContact.toJSON());
+            counter++;
+        }
+    }
+    /**
+     * This function retrieve or read all contact from the local storage and return it as an array of contacts
+     *
+     * @return {*}  {Contact[]}
+     */
+    function LoadDataFromLocalStorage() {
+        // Retrieving data from local storage
+        let contactArray = new Array();
+        let keys = Object.keys(localStorage);
+        for (const key of keys) {
+            let newContact = new Contact();
+            newContact.fromJSON(localStorage.getItem(key));
+            contactArray.push(newContact);
+        }
+        return contactArray;
+    }
+    /**
+     * This function print or display all the contact from the local storage to the console
+     *
+     * @param {Contact[]} contactArray
+     */
+    function PrintContactArray(contactArray) {
+        for (const contact of contactArray) {
+            console.log(contact.toString());
+        }
+    }
     function Start() {
         console.log("App Started...");
         $.getJSON("./Data/contact.json", function (dataSource) {
-            contactList = dataSource.contactList;
-            // loading data to local storage
-            let counter = 0;
-            for (const contact of contactList) {
-                let newContact = new Contact(contact.fullName, contact.contactNumber, contact.emailAddress);
-                localStorage.setItem(counter.toString(), newContact.toJSON());
-                counter++;
-            }
-            // Retrieving data from local storage
-            let keys = Object.keys(localStorage);
-            for (const key of keys) {
-                let newContact = new Contact();
-                newContact.fromJSON(localStorage.getItem(key));
-                console.log(newContact.toString());
-            }
+            let contactList = dataSource.contactList;
+            SaveContactListDataToLocalStorage(contactList);
+            let contactArray = LoadDataFromLocalStorage();
+            PrintContactArray(contactArray);
         });
     }
     window.addEventListener("load", Start);
